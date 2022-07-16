@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ddd;
+}
+
+#game {
+    width: 700px;
+    height: 300px;
+    border: 2px solid black;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    background-image: url(assets/desert.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#counter {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#player {
+    position: relative;
+    top: 250px;
+    left: 100px;
+    width: 60px;
+    height: 50px;
+}
+
+.jump-animation {
+    animation: jump 1s 1 linear;
+}
+
+#block {
+    position: relative;
+    top: 250px;
+    left: 700px;
+    width: 30px;
+    height: 50px;
+}
+
+.move-animation {
+    animation: move 2s infinite linear;
+}
+
+@keyframes move {
+    0% {
+        left: 700px;
+    }
+
+    100% {
+        left: -30px;
+    }
+}
+
+@keyframes jump {
+    0% {
+        top: 250px;
+    }
+
+    25% {
+        top: 210px;
+    }
+
+    50% {
+        top: 170px;
+    }
+
+    75% {
+        top: 210px;
+    }
+
+    100% {
+        top: 250px;
+    }
+}
