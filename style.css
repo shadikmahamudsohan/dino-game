@@ -40,7 +40,7 @@
 }
 
 .jump-animation {
-    animation: jump 1s 1 linear;
+    animation: jump 700ms 1 linear;
 }
 
 #block {
@@ -52,7 +52,7 @@
 }
 
 .move-animation {
-    animation: move 2s infinite linear;
+    animation: move 2.5s infinite linear;
 }
 
 @keyframes move {
@@ -70,16 +70,8 @@
         top: 250px;
     }
 
-    25% {
-        top: 210px;
-    }
-
     50% {
-        top: 170px;
-    }
-
-    75% {
-        top: 210px;
+        top: 150px;
     }
 
     100% {
