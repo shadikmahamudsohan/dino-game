@@ -6,9 +6,7 @@ const instruction = document.getElementById("instruction");
 
 var count = 0;
 let jumCount = 0;
-let animationTime = parseFloat(getComputedStyle(block).animationDuration);
-
-
+let animationTime = 2.5;
 function playAgain() {
     window.location.reload();
 }
@@ -20,7 +18,6 @@ function jump() {
     }
     player.classList.add("jump-animation");
     if (jumCount > 0) {
-        block.classList.add("move-animation");
         instruction.remove();
     }
     setTimeout(function () {
@@ -28,6 +25,15 @@ function jump() {
     }, 700);
 }
 
+
+setInterval(function () {
+    if (jumCount > 0) {
+        if (animationTime > 1.5) {
+            animationTime = animationTime - 0.001;
+            block.style.animation = `move ${animationTime}s infinite linear`;
+        }
+    }
+}, 100);
 
 const checkDead = setInterval(function () {
     counter.innerHTML = `<p>${count}</p>`;
@@ -55,10 +61,6 @@ const checkDead = setInterval(function () {
     } else {
         if (jumCount > 0) {
             count++;
-        }
-        if (animationTime > 1.5) {
-            animationTime = animationTime - 0.0001;
-            block.style.animation = `move ${animationTime}s infinite linear`;
         }
     }
 }, 10);

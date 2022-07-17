@@ -51,9 +51,6 @@
     height: 50px;
 }
 
-.move-animation {
-    animation: move 2.5s infinite linear;
-}
 
 @keyframes move {
     0% {
